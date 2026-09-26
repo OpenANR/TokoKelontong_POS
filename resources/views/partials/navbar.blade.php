@@ -44,7 +44,7 @@
                 <button class="profile-button dropdown-toggle" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     <img class="avatar-img avatar-sm" src="{{ asset('assets/images/avatar/avatar.jpg') }}" alt="{{ Auth::user()->name ?? 'Admin' }}">
-                    <span class="profile-name d-none d-sm-inline">{{ Auth::user()->name ?? 'Admin Hasan' }}</span>
+                    <span class="profile-name d-none d-sm-inline">{{ Auth::user()->name }}</span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="{{ route('profile') }}"><i class="bi bi-person me-1"></i> Profile</a></li>

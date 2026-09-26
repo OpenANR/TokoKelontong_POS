@@ -14,27 +14,27 @@
             <span class="nav-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
             <span class="nav-text">Dashboard</span>
         </a>
-        <a class="nav-link" href="#">
+        {{-- <a class="nav-link" href="#">
             <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
             <span class="nav-text">Users</span>
         </a>
         <a class="nav-link" href="#">
             <span class="nav-icon"><i class="bi bi-person-plus" aria-hidden="true"></i></span>
             <span class="nav-text">Add User</span>
-        </a>
+        </a> --}}
         <a class="nav-link {{ request()->routeIs('profile') ? 'active' : '' }}" href="{{ route('profile') }}" @if(request()->routeIs('profile')) aria-current="page" @endif>
             <span class="nav-icon"><i class="bi bi-person-badge" aria-hidden="true"></i></span>
             <span class="nav-text">Profile</span>
         </a>
-        <a class="nav-link" href="#">
+        {{-- <a class="nav-link" href="#">
             <span class="nav-icon"><i class="bi bi-bar-chart-line" aria-hidden="true"></i></span>
             <span class="nav-text">Charts</span>
-        </a>
+        </a> --}}
         <a class="nav-link" href="#">
             <span class="nav-icon"><i class="bi bi-table" aria-hidden="true"></i></span>
             <span class="nav-text">Tables</span>
         </a>
-        <a class="nav-link" href="#">
+        {{-- <a class="nav-link" href="#">
             <span class="nav-icon"><i class="bi bi-ui-checks-grid" aria-hidden="true"></i></span>
             <span class="nav-text">Forms</span>
         </a>
@@ -57,12 +57,12 @@
         <a class="nav-link" href="#">
             <span class="nav-icon"><i class="bi bi-file-earmark" aria-hidden="true"></i></span>
             <span class="nav-text">Blank Page</span>
-        </a>
+        </a> --}}
     </nav>
 
     <div class="sidebar-user">
         <img class="avatar-img avatar-md sidebar-user-avatar" src="{{ asset('assets/images/avatar/avatar.jpg') }}" alt="{{ Auth::user()->name ?? 'Admin' }}">
-        <strong>{{ Auth::user()->name ?? 'Admin Hasan' }}</strong>
+        <strong>{{ Auth::user()->name }}</strong>
         <small>{{ Auth::check() ? (Auth::user()->email ?? 'Active Workspace') : 'Active Workspace' }}</small>
     </div>
 
