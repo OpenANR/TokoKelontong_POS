@@ -1,0 +1,572 @@
+/**
+ * Toko Kelontong POS - Product Form Styling (Add & Edit)
+ * Matches adminHMD theme specifications & design language
+ */
+
+/* Form Card & Panels */
+.product-form-panel {
+  border: 1px solid var(--admin-border);
+  border-radius: 8px;
+  background: var(--admin-surface);
+  box-shadow: var(--admin-shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-form-panel:hover {
+  border-color: #c6d5e8;
+  box-shadow: var(--admin-shadow-lg);
+}
+
+.product-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.product-form-header .section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--admin-text);
+  margin-bottom: 0.2rem;
+}
+
+.product-form-header .section-title i {
+  color: var(--admin-primary);
+  font-size: 1.15rem;
+}
+
+.product-form-header p {
+  color: var(--admin-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+/* Form Labels & Badges */
+.form-label {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--admin-text);
+  margin-bottom: 0.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.required-mark {
+  color: var(--admin-danger);
+  font-weight: 800;
+  margin-left: 0.25rem;
+}
+
+.form-hint {
+  font-size: 0.8rem;
+  color: var(--admin-muted);
+  margin-top: 0.35rem;
+}
+
+/* Form Controls & Inputs */
+.product-form-panel .form-control,
+.product-form-panel .form-select {
+  border-radius: 8px;
+  border: 1px solid var(--admin-border);
+  background-color: var(--admin-surface);
+  color: var(--admin-text);
+  min-height: 44px;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.92rem;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+}
+
+.product-form-panel .form-control:focus,
+.product-form-panel .form-select:focus {
+  border-color: var(--admin-primary);
+  background-color: var(--admin-surface);
+  color: var(--admin-text);
+  box-shadow: var(--admin-ring);
+}
+
+.product-form-panel textarea.form-control {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.input-group-text {
+  border-color: var(--admin-border);
+  background-color: var(--admin-surface-soft);
+  color: var(--admin-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group > :not(:last-child):not(.dropdown-toggle):not(.popover):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Category Selection Cards */
+.category-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+.category-radio-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.category-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 1rem;
+  border: 2px solid var(--admin-border);
+  border-radius: 8px;
+  background-color: var(--admin-surface-soft);
+  cursor: pointer;
+  transition: border-color 0.16s ease, background-color 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease;
+  user-select: none;
+}
+
+.category-card:hover {
+  border-color: #93c5fd;
+  background-color: var(--admin-surface);
+  transform: translateY(-1px);
+}
+
+.category-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: inline-grid;
+  place-items: center;
+  font-size: 1.25rem;
+  flex: 0 0 auto;
+  transition: background-color 0.16s ease, color 0.16s ease;
+}
+
+.category-food .category-card-icon {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.category-drink .category-card-icon {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.category-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--admin-text);
+  line-height: 1.2;
+}
+
+.category-card-desc {
+  font-size: 0.78rem;
+  color: var(--admin-muted);
+  margin-top: 0.15rem;
+}
+
+/* Checked State for Category Card */
+.category-radio-input:checked + .category-card {
+  border-color: var(--admin-primary);
+  background-color: rgba(37, 99, 235, 0.05);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+}
+
+.category-radio-input:checked + .category-card .category-card-title {
+  color: var(--admin-primary);
+}
+
+.category-radio-input:checked + .category-food .category-card-icon {
+  background: #f59e0b;
+  color: #ffffff;
+}
+
+.category-radio-input:checked + .category-drink .category-card-icon {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+/* Live Helpers & Quick Increment */
+.helper-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.45rem;
+}
+
+.price-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.22rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(37, 99, 235, 0.09);
+  color: var(--admin-primary);
+}
+
+.stock-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+.quick-chip-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.quick-chip {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  color: var(--admin-muted);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.45rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1;
+}
+
+.quick-chip:hover {
+  border-color: var(--admin-primary);
+  color: var(--admin-primary);
+  background: var(--admin-surface-soft);
+  transform: translateY(-1px);
+}
+
+/* Image Upload & Dropzone Area */
+.upload-dropzone {
+  position: relative;
+  border: 2px dashed var(--admin-border);
+  border-radius: 10px;
+  background-color: var(--admin-surface-soft);
+  padding: 1.75rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease, transform 0.18s ease;
+  overflow: hidden;
+}
+
+.upload-dropzone:hover,
+.upload-dropzone.dragover {
+  border-color: var(--admin-primary);
+  background-color: rgba(37, 99, 235, 0.04);
+}
+
+.upload-dropzone.dragover {
+  transform: scale(1.01);
+}
+
+.upload-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--admin-primary);
+  display: inline-grid;
+  place-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.upload-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--admin-text);
+  margin-bottom: 0.2rem;
+}
+
+.upload-subtitle {
+  font-size: 0.78rem;
+  color: var(--admin-muted);
+  margin-bottom: 0.75rem;
+}
+
+.upload-btn-fake {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  color: var(--admin-text);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.file-input-hidden {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* Image Preview Card */
+.image-preview-container {
+  display: none;
+  position: relative;
+  border: 1px solid var(--admin-border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--admin-surface-soft);
+  margin-top: 1rem;
+}
+
+.image-preview-container.active {
+  display: block;
+}
+
+.preview-img-box {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  position: relative;
+}
+
+.preview-img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.preview-meta {
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: var(--admin-surface);
+  border-top: 1px solid var(--admin-border);
+}
+
+.preview-meta-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.preview-file-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--admin-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preview-file-size {
+  font-size: 0.75rem;
+  color: var(--admin-muted);
+}
+
+/* Existing Image Display (Edit mode) */
+.current-image-box {
+  border: 1px solid var(--admin-border);
+  border-radius: 10px;
+  background: var(--admin-surface-soft);
+  padding: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.current-image-thumbnail {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f1f5f9;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.current-image-thumbnail img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.current-image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  color: var(--admin-muted);
+}
+
+.current-image-placeholder i {
+  font-size: 2.2rem;
+  opacity: 0.5;
+  margin-bottom: 0.4rem;
+}
+
+/* Summary / Status Card */
+.summary-status-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.summary-status-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px dashed var(--admin-border);
+}
+
+.summary-status-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.summary-status-item span {
+  color: var(--admin-muted);
+}
+
+.summary-status-item strong {
+  color: var(--admin-text);
+}
+
+/* Tips / Guideline Card */
+.tips-panel {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(15, 118, 110, 0.05) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 8px;
+  padding: 1.15rem;
+}
+
+.tips-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--admin-primary);
+  margin-bottom: 0.5rem;
+}
+
+.tips-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.82rem;
+  color: var(--admin-text);
+}
+
+.tips-list li {
+  margin-bottom: 0.35rem;
+}
+
+.tips-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Dark Theme Overrides */
+html[data-theme="dark"] .product-form-panel {
+  border-color: var(--admin-border);
+  background: var(--admin-surface);
+}
+
+html[data-theme="dark"] .product-form-panel:hover {
+  border-color: #3b82f6;
+}
+
+html[data-theme="dark"] .category-food .category-card-icon {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+html[data-theme="dark"] .category-drink .category-card-icon {
+  background: rgba(2, 132, 199, 0.2);
+  color: #38bdf8;
+}
+
+html[data-theme="dark"] .category-radio-input:checked + .category-card {
+  border-color: var(--admin-primary);
+  background-color: rgba(96, 165, 250, 0.1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] .preview-img-box,
+html[data-theme="dark"] .current-image-thumbnail {
+  background: #0f172a;
+}
+
+html[data-theme="dark"] .upload-dropzone:hover,
+html[data-theme="dark"] .upload-dropzone.dragover {
+  border-color: var(--admin-primary);
+  background-color: rgba(96, 165, 250, 0.08);
+}
+
+html[data-theme="dark"] .tips-panel {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.08) 0%, rgba(45, 212, 191, 0.06) 100%);
+  border-color: rgba(96, 165, 250, 0.2);
+}
+
+html[data-theme="dark"] .quick-chip {
+  background: var(--admin-surface-soft);
+  color: var(--admin-muted);
+}
+
+html[data-theme="dark"] .quick-chip:hover {
+  color: var(--admin-primary);
+  border-color: var(--admin-primary);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 575.98px) {
+  .category-selector-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-form-panel {
+    padding: 1.15rem;
+  }
+
+  .upload-dropzone {
+    padding: 1.25rem 0.75rem;
+  }
+}

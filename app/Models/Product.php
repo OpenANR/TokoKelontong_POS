@@ -9,6 +9,7 @@ use Override;
 class Product extends Model
 {
     protected $fillable = [
+        'gambar',
         'kode_produk',
         'nama_produk',
         'deskripsi',
@@ -22,8 +23,8 @@ class Product extends Model
     {
         static::creating(function($produk) {
             do {
-                $code = 'PRD - ' . Str::upper(Str::random(4));
-            } while (self::where('kode_produk', $code)->exist());
+                $code = 'PRD-' . Str::upper(Str::random(4));
+            } while (self::where('kode_produk', $code)->exists());
 
             $produk->kode_produk = $code;
         });

@@ -22,17 +22,13 @@
             <span class="nav-icon"><i class="bi bi-person-plus" aria-hidden="true"></i></span>
             <span class="nav-text">Add User</span>
         </a> --}}
+        <a class="nav-link {{ request()->routeIs('product.*') ? 'active' : '' }}" href="{{ route('product.index') }}" @if(request()->routeIs('product.*')) aria-current="page" @endif>
+            <span class="nav-icon"><i class="bi bi-boxes" aria-hidden="true"></i></span>
+            <span class="nav-text">Produk</span>
+        </a>
         <a class="nav-link {{ request()->routeIs('profile') ? 'active' : '' }}" href="{{ route('profile') }}" @if(request()->routeIs('profile')) aria-current="page" @endif>
             <span class="nav-icon"><i class="bi bi-person-badge" aria-hidden="true"></i></span>
             <span class="nav-text">Profile</span>
-        </a>
-        {{-- <a class="nav-link" href="#">
-            <span class="nav-icon"><i class="bi bi-bar-chart-line" aria-hidden="true"></i></span>
-            <span class="nav-text">Charts</span>
-        </a> --}}
-        <a class="nav-link" href="#">
-            <span class="nav-icon"><i class="bi bi-table" aria-hidden="true"></i></span>
-            <span class="nav-text">Tables</span>
         </a>
         {{-- <a class="nav-link" href="#">
             <span class="nav-icon"><i class="bi bi-ui-checks-grid" aria-hidden="true"></i></span>
